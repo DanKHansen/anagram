@@ -1,4 +1,3 @@
 object Anagram:
-   def findAnagrams(target: String, candidates: List[String]): List[String] = {
-      candidates.filter(c => c.toLowerCase != target.toLowerCase && c.toLowerCase.permutations.contains(target.toLowerCase))
-   }
+   def findAnagrams(t: String, cs: List[String]): List[String] =
+      cs.filterNot(t.equalsIgnoreCase).filter(_.toLowerCase.sorted == t.toLowerCase.sorted)
